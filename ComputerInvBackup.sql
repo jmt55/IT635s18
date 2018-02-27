@@ -82,6 +82,7 @@ CREATE TABLE `wksinv` (
   `purchase_date` date DEFAULT NULL,
   `refresh_date` date DEFAULT NULL,
   `warranty_exp` date DEFAULT NULL,
+  `type` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`serial_num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -92,7 +93,7 @@ CREATE TABLE `wksinv` (
 
 LOCK TABLES `wksinv` WRITE;
 /*!40000 ALTER TABLE `wksinv` DISABLE KEYS */;
-INSERT INTO `wksinv` VALUES ('ABC78D1','REDD-ABC78D1','Latitude E7280','i5-2600','8GB','SSD-256','Redmond','Infra-IT','available','2016-01-01','2020-06-01','2022-06-01'),('B0KB0K1','PRNL-B0KB0K1','Latitude E7250','i5-2600','8GB','SSD-256','Princeton','Emma.Stone','active','2018-01-01','2021-06-01','2022-01-01'),('RTH76G1','NYCL-RTH76G1','Latitude E5480','i5-2600','8GB','SATA-500','New York','Klaus.Bowen','active','2018-01-01','2021-06-01','2022-01-01'),('XTYXTY1','BOSL-XTYXTY1','Latitude E7280','i5-2600','8GB','SSD-256','Boston','Dean.Glow','active','2018-01-01','2021-06-01','2022-01-01');
+INSERT INTO `wksinv` VALUES ('ABC78D1','REDD-ABC78D1','Optiplex O7020','i7-2900','8GB','SSD-256','Redmond','Infra-IT','available','2016-01-01','2020-06-01','2022-06-01','Desktop'),('B0KB0K1','PRNL-B0KB0K1','Latitude E7250','i5-2600','8GB','SSD-256','Princeton','Emma.Stone','active','2018-01-01','2021-06-01','2022-01-01','Laptop'),('RTH76G1','NYCL-RTH76G1','Latitude E5480','i5-2600','8GB','SATA-500','New York','Klaus.Bowen','active','2018-01-01','2021-06-01','2022-01-01','Laptop'),('XTYXTY1','BOSL-XTYXTY1','Latitude E7280','i5-2600','8GB','SSD-256','Boston','Dean.Glow','active','2018-01-01','2021-06-01','2022-01-01','Laptop');
 /*!40000 ALTER TABLE `wksinv` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -105,4 +106,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-26 18:08:35
+-- Dump completed on 2018-02-27 19:18:20
