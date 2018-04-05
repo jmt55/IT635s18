@@ -1,15 +1,10 @@
-<?php 
+<?php //authentication log page
 
-require_once 'session_head.php'; //contains web logo and session tracking
+require_once 'session_head.php';
 echo "<h3> Log in please </h3>";
 
-$loginfail = $user = $password = $accessType = ""; //loginfail variable parameters passed
+$loginfail = $user = $password = $accessType = "";
 
-/*
-verify if for is null or not, grabs user input for user, password, accessType -
-then escapes string
-
-*/
 if (isset($_POST['user']) &&
     isset($_POST['password']) &&
     isset($_POST['accessType']))
@@ -18,61 +13,51 @@ if (isset($_POST['user']) &&
         $password  = washString($_POST['password']);
         $accessType = washString($_POST['accessType']);
 
-/*
-if user and password field is blank loginfail variable display reason
-*/
-if ($user == "" || $password == "")
+if ($user == "" || $password == "" || $accessType == "")
 {
         $loginfail = "incomplete fields <br />";
 }
+else
+{
 
-/*
-php sql query below to select and match passed variable data from database members table and return data into variable $result
-*/
+$db_server = mysqli_connect($dbhostname, $dbuser, $dbpassword);
 
-        $query = "select user,password,accessType from members where user= '$user' and password= '$password' and accessType= '$accessType'";
+if (!$db_server) die("unable to connect to MySQL:" . mysqli_error());
+
+mysqli_select_db($db_server, $dbdatabase) or die ("unable to select database: " . mysqli_error());
+
+        $query = "select * from members where user= '$user'";
 
         $result = mysqli_query($db_server,$query) or die(mysqli_error());
-/*
-script below is for matching hashed password to db then based on accessType provided proper link to inventory profile is provided.
 
-*/
         if (mysqli_num_rows($result))
-	{
-		$row = mysqli_fetch_row($result);
-		$salt1 = "b0k$";
-		$salt2 = "h$1n";
-		$hashbrown = md5("$salt1$password$salt2");
-		
-		if($hashbrown == $row[2])
-		{
-			echo "Welcome $row[1]";
-		}
-		else
-                {	
-                $loginfail = "bad combination of user or password or accessType<br />";
+        {
+                $row = mysqli_fetch_row($result);
+                $salt1 = "b0k$";
+                $salt2 = "h$1n";
+                $hashbrown = md5("$salt1$password$salt2");
+
+                if($hashbrown == $row[2] && $accessType == 'admin')
+                {
+                        $_SESSION['user'] = $user;
+                        echo "Welcome Admin $row[1]! Please <a href='admin_home.html'>click here</a>";
                 }
-	}	
-        else if($accessType == 'admin')
-        {
-                $_SESSION['user'] = $user;
-                $_SESSION['password'] = $password;
-                die("login as admin is successful.  Please <a href='admin_home.html'>click here</a>.");
-        }
-        else
-        {
-                $_SESSION['user'] = $user;
-                $_SESSION['password'] = $password;
-                die("login as standard user is successul.  Please <a href='stduserhome.html'>click here</a>.");
+                else if($hashbrown == $row[2] && $accessType == 'standard')
+                {
+                        $_SESSION['user'] = $user;
+                        echo "Welcome $row[1]! Please <a href='stduserhome.html'>click here</a>";
+                }
+
+                else
+                {
+                $loginfail = "invalid credentials, please try again!<br />";
+                }
         }
 
 }
-
-
-
-//web logon form below
+}
 echo <<<_END
-<form method='post' action='home_page.php'> $loginfail
+<form method='post' action='index_boo.php'> $loginfail
  <pre>
  Username   <input type='text' maxlength='16' name='user' value='$user' /><br />
  Password   <input type='password' maxlength='16' name='password' value='$password'  /><br />
@@ -83,5 +68,3 @@ echo <<<_END
 </form>
 _END;
 
-
-?>
