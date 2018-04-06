@@ -2,8 +2,6 @@
 
 include 'func.php';
 include 'pic.html';
-
-$accessType = $_POST['accessType'];
   
 session_start();
 
@@ -34,7 +32,7 @@ else if ($loggedin && $user == "adminuser")
 }
 else
 {
-	      echo "<a href='home_page.php'>Login</a>";
+	      echo "<a href='index_boo.php'>Login</a>";
 
 }
 

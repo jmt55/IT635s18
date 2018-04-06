@@ -59,7 +59,7 @@ then summons php mysql function query to insert input received from POST method 
 //simple asset web form 
 echo <<<_END
 <h2> Asset Form </h2>
-  <form action="testform.php" method="post"><pre>
+  <form action="asset_form.php" method="post"><pre>
     sn       <input type="text" name="sn">
     hostname <input type="text" name="hostname">
     model    <input type="text" name="model">

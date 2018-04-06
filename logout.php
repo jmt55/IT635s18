@@ -5,7 +5,7 @@ require_once 'session_head.php'; //provides the head, session, and function "log
 if (isset($_SESSION['user']))
 {
 	logOFF();
-		echo "Log out successful! <a href='home_page.php'> Click me</a> to log in again.";
+		echo "Log out successful! <a href='index_boo.php'> Click me</a> to log in again.";
 	
 }
 else echo "Logged Out";
