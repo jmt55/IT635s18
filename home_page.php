@@ -60,7 +60,7 @@ mysqli_select_db($db_server, $dbdatabase) or die ("unable to select database: " 
 
 //below is the web form
 echo <<<_END
-<form method='post' action='index_boo.php'> $loginfail
+<form method='post' action='home_page.php'> $loginfail
  <pre>
  Username   <input type='text' maxlength='16' name='user' value='$user' /><br />
  Password   <input type='password' maxlength='16' name='password' value='$password'  /><br />
