@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
 --
 -- Host: localhost    Database: ComputerInventory
 -- ------------------------------------------------------
--- Server version	5.7.21-0ubuntu0.16.04.1
+-- Server version	5.7.22-0ubuntu0.16.04.1-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,51 +14,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `Login`
---
-
-DROP TABLE IF EXISTS `Login`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Login` (
-  `loginName` varchar(20) NOT NULL,
-  `loginTime` datetime NOT NULL,
-  PRIMARY KEY (`loginName`,`loginTime`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Login`
---
-
-LOCK TABLES `Login` WRITE;
-/*!40000 ALTER TABLE `Login` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Login` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `logintrack`
---
-
-DROP TABLE IF EXISTS `logintrack`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `logintrack` (
-  `loginname` varchar(25) DEFAULT NULL,
-  `logintime` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `logintrack`
---
-
-LOCK TABLES `logintrack` WRITE;
-/*!40000 ALTER TABLE `logintrack` DISABLE KEYS */;
-/*!40000 ALTER TABLE `logintrack` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `members`
@@ -120,7 +75,7 @@ CREATE TABLE `wksinv` (
 
 LOCK TABLES `wksinv` WRITE;
 /*!40000 ALTER TABLE `wksinv` DISABLE KEYS */;
-INSERT INTO `wksinv` VALUES ('4CUSBR5','EHAL-4CUSBR5','Optiplex O7050','Desktop','i7-2600','16GB','SATA-500','hashman','available','2018-03-19','2021-09-19','2022-03-19'),('81BOK26','TLSL-81BOK26','Latitude E7270','Laptop','i5-2600','8GB','SSD-256','hashman','available','2015-03-05','2018-09-05','2019-03-05'),('ABC78D1','REDD-ABC78D1','Optiplex O7020','Desktop','i7-2900','8GB','SSD-256','adminuser','available','2016-01-01','2020-06-01','2022-06-01'),('B0KB0K1','PRNL-B0KB0K1','Latitude E7250','Laptop','i5-2600','8GB','SSD-256','hashman2','active','2018-01-01','2021-06-01','2022-01-01'),('RTH76G1','NYCL-RTH76G1','Latitude E5480','Laptop','i5-2600','8GB','SATA-500','Klaus.Bowen','active','2018-01-01','2021-06-01','2022-01-01'),('XTYXTY1','BOSL-XTYXTY1','Latitude E7280','Laptop','i5-2600','8GB','SSD-256','Dean.Glow','active','2018-01-01','2021-06-01','2022-01-01');
+INSERT INTO `wksinv` VALUES ('4CUSBR5','EHAL-4CUSBR5','Optiplex O7050','Desktop','i7-2600','16GB','SATA-500','hashman','available','2018-03-19','2021-09-19','2022-03-19'),('81BOK26','TLSL-81BOK26','Latitude E7270','Laptop','i5-2600','8GB','SSD-256','hashman','available','2015-03-05','2018-09-05','2019-03-05'),('ABC78D1','REDD-ABC78D1','Optiplex O7020','Desktop','i7-2900','8GB','SSD-256','adminuser','available','2016-01-01','2020-06-01','2022-06-01'),('ABCDE98','PRNL-ABCDE98','E6400','laptop','i5-6600','8GB','SSD-256','hashman2','available','2018-04-04','2018-04-11','2018-04-17'),('ABCDE99','TLSL-ABCDE99','Latitude E7480','Laptop','i5-2700','8GB','SSD-256','adminuser','available','2018-04-04','2018-04-11','2018-04-18'),('B0KB0K1','PRNL-B0KB0K1','Latitude E7250','Laptop','i5-2600','8GB','SSD-256','hashman2','active','2018-01-01','2021-06-01','2022-01-01'),('RTH76G1','NYCL-RTH76G1','Latitude E5480','Laptop','i5-2600','8GB','SATA-500','Klaus.Bowen','active','2018-01-01','2021-06-01','2022-01-01'),('XTYXTY1','BOSL-XTYXTY1','Latitude E7280','Laptop','i5-2600','8GB','SSD-256','Dean.Glow','active','2018-01-01','2021-06-01','2022-01-01');
 /*!40000 ALTER TABLE `wksinv` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -137,7 +92,7 @@ CREATE TABLE `wksrequest` (
   `sn` varchar(12) DEFAULT NULL,
   `request_time` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `req_no` (`req_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,7 +101,7 @@ CREATE TABLE `wksrequest` (
 
 LOCK TABLES `wksrequest` WRITE;
 /*!40000 ALTER TABLE `wksrequest` DISABLE KEYS */;
-INSERT INTO `wksrequest` VALUES (3,'hashman2','ABC78D1','2018-03-23 02:53:51');
+INSERT INTO `wksrequest` VALUES (3,'hashman2','ABC78D1','2018-03-23 02:53:51'),(4,'hashman2','ABCDE99','2018-04-04 23:36:09');
 /*!40000 ALTER TABLE `wksrequest` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -159,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-23  3:07:17
+-- Dump completed on 2018-05-07  3:59:44
