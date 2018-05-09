@@ -19,7 +19,7 @@
 -- Position to start replication or point-in-time recovery from
 --
 
-CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin.000002', MASTER_LOG_POS=591;
+CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin.000004', MASTER_LOG_POS=154;
 
 --
 -- Current Database: `CompInv`
@@ -594,6 +594,7 @@ CREATE TABLE `proc` (
 
 LOCK TABLES `proc` WRITE;
 /*!40000 ALTER TABLE `proc` DISABLE KEYS */;
+INSERT INTO `proc` VALUES ('ComputerInventory','view_req','PROCEDURE','view_req','SQL','CONTAINS_SQL','NO','DEFINER','','','begin\nselect * from wksrequest;\nend','root@localhost','2018-05-08 02:52:16','2018-05-08 02:52:16','ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION','','utf8','utf8_general_ci','latin1_swedish_ci','begin\nselect * from wksrequest;\nend');
 /*!40000 ALTER TABLE `proc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1016,7 +1017,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('localhost','root','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','','','','',0,0,0,0,'mysql_native_password','*78CC2F1ECDDC3CC3BFE040B95F95148E3905F7BF','N','2018-01-24 03:52:41',NULL,'N'),('localhost','mysql.session','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE','N','2018-01-24 03:52:41',NULL,'Y'),('localhost','mysql.sys','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE','N','2018-01-24 03:52:41',NULL,'Y'),('localhost','debian-sys-maint','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','','','','',0,0,0,0,'mysql_native_password','*446433B18311AC60A2BD48F6BA5CB30F2239B4F3','N','2018-01-24 03:52:41',NULL,'N'),('localhost','adminuser','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','','','','',0,0,0,0,'mysql_native_password','*A8F9447D80938C427C07AD385125B33B4E345364','N','2018-02-27 17:10:26',NULL,'N'),('localhost','jmt55','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*00A51F3F48415C7D4E8908980D443C29C69B60C9','N','2018-02-08 00:04:59',NULL,'N'),('localhost','standarduser','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*00A51F3F48415C7D4E8908980D443C29C69B60C9','N','2018-02-27 17:16:43',NULL,'N'),('%','slave_usr','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','Y','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*E22EEF990BCA7E4E9A549B97BF0DB5AC88563394','N','2018-05-07 03:55:50',NULL,'N'),('%','slaver','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','Y','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*4ACFE3202A5FF5CF467898FC58AAB1D615029441','N','2018-05-07 19:10:12',NULL,'N');
+INSERT INTO `user` VALUES ('%','root','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','','','','',0,0,0,0,'mysql_native_password','*78CC2F1ECDDC3CC3BFE040B95F95148E3905F7BF','N','2018-01-24 03:52:41',NULL,'N'),('localhost','mysql.session','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE','N','2018-01-24 03:52:41',NULL,'Y'),('localhost','mysql.sys','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE','N','2018-01-24 03:52:41',NULL,'Y'),('localhost','debian-sys-maint','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','','','','',0,0,0,0,'mysql_native_password','*446433B18311AC60A2BD48F6BA5CB30F2239B4F3','N','2018-01-24 03:52:41',NULL,'N'),('localhost','adminuser','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','N','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','','','','',0,0,0,0,'mysql_native_password','*A8F9447D80938C427C07AD385125B33B4E345364','N','2018-02-27 17:10:26',NULL,'N'),('localhost','jmt55','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*00A51F3F48415C7D4E8908980D443C29C69B60C9','N','2018-02-08 00:04:59',NULL,'N'),('localhost','standarduser','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*00A51F3F48415C7D4E8908980D443C29C69B60C9','N','2018-02-27 17:16:43',NULL,'N'),('%','slave_usr','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','Y','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*E22EEF990BCA7E4E9A549B97BF0DB5AC88563394','N','2018-05-07 03:55:50',NULL,'N'),('%','slaver','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','Y','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*4ACFE3202A5FF5CF467898FC58AAB1D615029441','N','2018-05-07 19:10:12',NULL,'N');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1067,4 +1068,4 @@ CREATE TABLE IF NOT EXISTS `slow_log` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-07 19:18:36
+-- Dump completed on 2018-05-09  0:11:26
