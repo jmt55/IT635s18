@@ -11,7 +11,7 @@ if (!$db_server) die("unable to connect to MySQL:" . mysqli_error()); //provide 
 
 mysqli_select_db($db_server, $dbdatabase) or die ("unable to select database: " . mysqli_error()); //selects database and provides error if any
 
-$query = "select * from wksrequest"; //php mysql command to query all asset from wksrequest table
+$query = ("call view_req();"); //php mysql command to query all asset from wksrequest table
 $result = mysqli_query($db_server, $query); //holds retrieved data 
 
 if (!$result) die ("database access failed: " . mysqli_error());
