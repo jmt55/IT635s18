@@ -1,5 +1,12 @@
 <?php //authentication log page
 
+/*
+By:John Tiu
+For: IT635 Spring 2018 Mid/Final Project
+Instructor: DJ Kehoe
+*/
+
+
 require_once 'session_head.php'; //includes session, function, and web header
 echo "<h3> Log in please </h3>";
 

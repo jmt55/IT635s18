@@ -1,4 +1,9 @@
 <?php //request_asset.php
+/*
+By:John Tiu
+For: IT635 Spring 2018 Mid/Final Project
+Instructor: DJ Kehoe
+*/
 
 require_once 'login.inc'; //database login credentials
 require_once 'session_head.php'; //provides web header and session
@@ -51,7 +56,7 @@ echo <<<_END
 	ram:      $row[5]
 	hdd_type: $row[6]
 	status:   $row[8]
-    refresh_date: $row[10]
+    refresh_date: $row[9]
 	</pre>
 	<form action="request_asset.php" method="post">
 	<input type="hidden" name="request" value="yes" />

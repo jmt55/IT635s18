@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5af30215c4d998a46d0270d9"},"User":"Dean.Glow","accessType":"standard","Location":"Boston"}
+{"_id":{"$oid":"5af3028cc4d998a46d0270da"},"User":"Emma.Stone","accessType":"standard","Location":"Princeton"}
+{"_id":{"$oid":"5af302cdc4d998a46d0270db"},"User":"hashman","accessType":"admin","Location":"Augusta"}
+{"_id":{"$oid":"5af302f1c4d998a46d0270dc"},"User":"hashman2","accessType":"standard","Location":"Bulgaria"}
+{"_id":{"$oid":"5af3031dc4d998a46d0270dd"},"User":"Klaus.Bowen","accessType":"standard","Location":"New York"}

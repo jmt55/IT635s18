@@ -1,4 +1,10 @@
 <?php
+/*
+By:John Tiu
+For: IT635 Spring 2018 Mid/Final Project
+Instructor: DJ Kehoe
+*/
+
 
 include 'login.inc'; //login credentials for database connection
 require_once 'session_head.php'; //provides the navigation menu bar 
@@ -16,7 +22,7 @@ mysqli_select_db($db_server, $dbdatabase)
 
 /*check variables is not null then feeds input from web form to listed variables
 
-then summons php mysql function query to insert input received from POST method into WKSINV table.
+then parses function query and insert input received from POST method into WKSINV table.
 */
   if (isset($_POST['sn']) &&
       isset($_POST['hostname']) &&
@@ -27,9 +33,7 @@ then summons php mysql function query to insert input received from POST method 
       isset($_POST['hdd_type']) &&
       isset($_POST['user']) &&
       isset($_POST['status']) &&
-      isset($_POST['po_date']) &&
-      isset($_POST['refresh_date']) &&
-      isset($_POST['wty_exp']))
+      isset($_POST['refresh_date'])) 
   {
     $sn           = $_POST['sn'];
     $hostname     = $_POST['hostname'];
@@ -40,11 +44,9 @@ then summons php mysql function query to insert input received from POST method 
     $hdd_type     = $_POST['hdd_type'];
     $user         = $_POST['user'];
     $status       = $_POST['status'];
-    $po_date      = $_POST['po_date'];
-    $refresh_date = $_POST['refresh_date'];
-    $wty_exp      = $_POST['wty_exp'];
+    $refresh_date      = $_POST['refresh_date'];
 
-    $query = "INSERT INTO wksinv VALUES" . "('$sn','$hostname', '$model', '$type', '$cpu', '$ram', '$hdd_type', '$user', '$status', '$po_date', '$refresh_date', '$wty_exp')";
+    $query = "INSERT INTO wksinv VALUES" . "('$sn','$hostname', '$model', '$type', '$cpu', '$ram', '$hdd_type', '$user', '$status', '$refresh_date')";
 
     if (!mysqli_query($db_server, $query))
 	{
@@ -69,9 +71,7 @@ echo <<<_END
     hdd_type <input type="text" name="hdd_type">
     user     <input type="text" name="user">
     status   <input type="text" name="status">
-    po_date  <input type="date" name="po_date">
 refresh_date <input type="date" name="refresh_date">
-    wty_exp  <input type="date" name="wty_exp">
           <input type="submit" value="ADD RECORD">
   </pre></form>
 _END;

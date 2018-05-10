@@ -1,4 +1,9 @@
 <?php //view_request.php -provides user a receipt of their requested asset
+/*
+By:John Tiu
+For: IT635 Spring 2018 Mid/Final Project
+Instructor: DJ Kehoe
+*/
 
 require_once 'login.inc'; //contains database credentials
 require_once 'session_head.php'; //provides web header and session

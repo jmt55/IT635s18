@@ -1,12 +1,17 @@
+By: John Tiu
+For: IT635 Spring 2018 Mid/Final Project
+Instructor: DJ Kehoe
+
+
 <?php  //add_hashuser.php -creates user with hashed and salted password.
 
 
 $salt1 = "b0k$";
 $salt2 = "h$1n";
 
-$user = 'hashman2'; $password = 'hashaway';
-$accessType = 'standard';
-$location = 'Bulgaria';
+$user = 'boo-admin'; $password = 'mario64';
+$accessType = 'admin';
+$location = 'Nintendo';
 $hashbrown = md5("$salt1$password$salt2");
 newUser($user, $hashbrown, $accessType, $location);
 

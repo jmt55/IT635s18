@@ -1,5 +1,12 @@
 <?php //func.php - list of functions used via "session_head.php"
 
+/*
+By:John Tiu
+For: IT635 Spring 2018 Mid/Final Project
+Instructor: DJ Kehoe
+*/
+
+
 $dbhostname = 'localhost';
 $dbuser = 'root';
 $dbpassword = 'Ryder9uit';
